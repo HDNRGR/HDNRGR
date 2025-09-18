@@ -152,3 +152,4 @@ document.querySelectorAll(".gallery img").forEach(img => {
     document.body.appendChild(overlay);
   });
 });
+
