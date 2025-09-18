@@ -646,3 +646,23 @@ h1, h2, h3 {
     gap: 10px; /* optional: adjust spacing between menu items */
   }
 }
+
+// New IntersectionObserver for About Section content
+const aboutObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Show heading and image
+      const aboutHeading = document.querySelector("#about h2");
+      const aboutImage = document.querySelector(".about-content img");
+
+      if (aboutHeading) aboutHeading.classList.add("visible");
+      if (aboutImage) aboutImage.classList.add("visible");
+    }
+  });
+}, { threshold: 0.2 });
+
+// Observe the split sections boxes
+const splitSections = document.querySelector(".split-sections");
+if (splitSections) {
+  aboutObserver.observe(splitSections);
+}
