@@ -84,7 +84,7 @@ html {
 /* Hero */
 .hero {
   height: 100vh;
-  background: url("Images/heroshot.png") center/cover no-repeat;
+  background: url("heroshot.png") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -424,7 +424,7 @@ h1, h2, h3 {
 /* Load Evanescent */
 @font-face {
   font-family: 'Midnight Moon';
-  src: url('Fonts/eurostar.ttf') format('truetype');
+  src: url('eurostar.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -645,3 +645,4 @@ h1, h2, h3 {
     gap: 10px; /* optional: adjust spacing between menu items */
   }
 }
+
