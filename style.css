@@ -424,7 +424,7 @@ h1, h2, h3 {
 /* Load Evanescent */
 @font-face {
   font-family: 'Midnight Moon';
-  src: url('Fonts/eurostar.ttf') format('truetype');
+  src: url('eurostar.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -628,3 +628,4 @@ h1, h2, h3 {
     font-size: 0.9rem;
   }
 }
+
