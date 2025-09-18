@@ -646,3 +646,29 @@ h1, h2, h3 {
     gap: 10px; /* optional: adjust spacing between menu items */
   }
 }
+
+/* Hide navbar logo on smaller screens to keep single row */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: nowrap;          
+    justify-content: center;  /* center the items */
+    padding: 5px 10px;          
+  }
+
+  .navbar ul {
+    display: flex;
+    flex-wrap: nowrap;           
+    gap: 5px;                    
+    justify-content: center;   /* keep links centered */
+    width: auto;                 
+  }
+
+  .navbar ul li a {
+    font-size: 0.85rem;          
+    padding: 4px 8px;            
+  }
+
+  .navbar .logo {
+    display: none; /* logo hidden on mobile */
+  }
+}
