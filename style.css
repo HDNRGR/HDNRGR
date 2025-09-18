@@ -569,13 +569,29 @@ h1, h2, h3 {
 }
 
 /* Mobile */
+/* Mobile */
 @media (max-width: 768px) {
-  .navbar {
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    padding: 10px 15px;
+  .navbar ul li a {
+    font-size: 0.9rem;
+    padding: 6px 10px;
   }
+
+  .navbar ul {
+    gap: 5px;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+  .navbar ul li a {
+    font-size: 0.8rem;
+    padding: 5px 8px;
+  }
+
+  .navbar ul {
+    gap: 4px;
+  }
+}
 
   .navbar .logo {
     font-size: 1.4rem;
@@ -652,5 +668,6 @@ h1, h2, h3 {
     gap: 10px; /* optional: adjust spacing between menu items */
   }
 }
+
 
 
