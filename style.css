@@ -442,16 +442,12 @@ h1, h2, h3 {
   border-radius: 12px;
   padding: 15px 20px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-  cursor: pointer; /* makes it clickable on mobile */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.info-box:hover,
-.info-box:focus,
-.info-box:active {
+.info-box:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  background: rgba(255, 255, 255, 0.08); /* subtle feedback on tap */
 }
 
 .info-box p {
@@ -460,9 +456,7 @@ h1, h2, h3 {
   transition: color 0.3s ease, filter 0.3s ease;
 }
 
-.info-box:hover p,
-.info-box:focus p,
-.info-box:active p {
+.info-box:hover p {
   color: #222; /* darker text */
   filter: blur(0); /* remove blur */
 }
@@ -569,7 +563,6 @@ h1, h2, h3 {
 }
 
 /* Mobile */
-/* Mobile */
 @media (max-width: 768px) {
   .navbar {
     flex-wrap: wrap;
@@ -582,36 +575,6 @@ h1, h2, h3 {
     font-size: 1.4rem;
     margin-bottom: 8px;
   }
-
-  .navbar ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px; /* reduced spacing to fit single row */
-    justify-content: center;
-    width: 100%;
-  }
-
-  .navbar ul li a {
-    font-size: 0.85rem; /* slightly smaller */
-    padding: 5px 8px;   /* reduced padding */
-  }
-}
-
-/* Extra small phones */
-@media (max-width: 480px) {
-  .navbar .logo {
-    font-size: 1.2rem;
-  }
-
-  .navbar ul li a {
-    font-size: 0.75rem;
-    padding: 4px 6px;
-  }
-
-  .navbar ul {
-    gap: 3px;
-  }
-}
 
   .navbar ul {
     display: flex;         /* keep links visible */
@@ -683,7 +646,3 @@ h1, h2, h3 {
     gap: 10px; /* optional: adjust spacing between menu items */
   }
 }
-
-
-
-
