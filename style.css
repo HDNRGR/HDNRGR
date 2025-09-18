@@ -133,23 +133,52 @@ button.btn {
 
 .about-content {
   display: grid;
-  grid-template-columns: 300px auto; /* 300px for image, rest for text */
-  align-items: center; /* vertical centering */
-  column-gap: 20px; /* space between photo and text */
+  grid-template-columns: 300px auto; /* desktop: image left, text right */
+  align-items: center;
+  column-gap: 20px;
   max-width: 1000px;
   margin: auto;
 }
 
 .about-content img {
-  width: 300px;       /* keep original size */
+  width: 100%;
+  max-width: 300px;
+  height: auto;
   border-radius: 10px;
-  grid-column: 1;     /* always first column */
-  justify-self: center; /* keep photo centered in its column */
+  grid-column: 1;
+  justify-self: center;
 }
 
 .about-text {
   grid-column: 2;
-  text-align: left;      /* text starts from left edge of its column */
+  text-align: left;
+}
+
+/* Tablet & smaller: stack image on top */
+@media (max-width: 1024px) {
+  .about-content {
+    grid-template-columns: 1fr; /* single column */
+    text-align: center;
+  }
+
+  .about-content img {
+    max-width: 80%;
+    margin: 0 auto 20px auto; /* center image with spacing below */
+    grid-column: 1;           /* spans whole row */
+  }
+
+  .about-text {
+    grid-column: 1; /* text goes below image */
+    text-align: center;
+  }
+}
+
+.about h2 {
+  grid-column: 1 / -1;   /* optional if using grid in .about-content */
+  margin-bottom: 20px;   /* adds space between heading and image/text */
+  text-align: center;    /* center the heading */
+  z-index: 2;            /* makes sure it’s above other content */
+  position: relative;    /* needed for z-index to work */
 }
 
 
@@ -672,3 +701,4 @@ h1, h2, h3 {
     display: none; /* logo hidden on mobile */
   }
 }
+
