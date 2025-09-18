@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   // ----- Intersection Observer for scroll animations -----
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -17,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
           span.style.animation = "";
 
           const textLength = span.textContent.length;
-          const duration = textLength * 0.015; // 30ms per character
+          const duration = textLength * 0.015; // 15ms per character
 
           // Trigger typing
           span.style.animation = `typing ${duration}s steps(${textLength}, end) forwards`;
@@ -47,21 +46,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const btn = document.getElementById("viewGalleryBtn");
   const extraGallery = document.querySelector(".extra-gallery");
 
-  // Portfolio View Gallery toggle
-if (btn && extraGallery) {
-  btn.addEventListener("click", () => {
-    extraGallery.classList.toggle("show"); // use 'show' instead of removing 'hidden'
+  if (btn && extraGallery) {
+    btn.addEventListener("click", () => {
+      extraGallery.classList.toggle("show");
+      btn.textContent = extraGallery.classList.contains("show") ? "Show Less" : "View Gallery";
+    });
+  }
 
-    // Change button text
-    btn.textContent = extraGallery.classList.contains("show") 
-      ? "Show Less" 
-      : "View Gallery";
-  });
-}
+  // ----- About Section fade fix for mobile -----
+  const aboutObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const aboutHeading = document.querySelector("#about h2");
+        const aboutImage = document.querySelector(".about-content img");
 
-});
+        if (aboutHeading) aboutHeading.classList.add("visible");
+        if (aboutImage) aboutImage.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.2 });
 
-document.addEventListener("DOMContentLoaded", () => {
+  // Observe the split-sections boxes to trigger heading & image fade
+  const splitSections = document.querySelector(".split-sections");
+  if (splitSections) aboutObserver.observe(splitSections);
+
+  // ----- Hero "View Portfolio" button -----
   const hero = document.querySelector(".hero");
   const about = document.querySelector("#about");
   const vpBtn = document.querySelector(".hero .btn");
@@ -70,34 +79,29 @@ document.addEventListener("DOMContentLoaded", () => {
     vpBtn.addEventListener("click", (e) => {
       e.preventDefault();
 
-      // Fade hero out
       hero.classList.add("fade-out");
 
-      // Wait for fade-out to complete
       setTimeout(() => {
-        // Instant scroll to About (completed immediately)
         window.scrollTo(0, about.offsetTop);
-
-        // Fade-in About immediately after scroll
         about.classList.add("fade-in");
 
-        // Restore hero after About fade-in
         setTimeout(() => {
           hero.classList.remove("fade-out");
           hero.classList.add("fade-in");
 
-          // Clean up fade-in class after animation
           setTimeout(() => hero.classList.remove("fade-in"), 900);
         }, 1200);
 
-      }, 600); // match hero fade-out duration
+      }, 600);
     });
   }
-});
 
+  // ----- Logo scroll to top -----
+  const logo = document.querySelector(".navbar .logo");
+  if (logo) {
+    logo.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 
-
-const logo = document.querySelector(".navbar .logo");
-logo.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
 });
