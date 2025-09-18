@@ -140,10 +140,9 @@ button.btn {
 }
 
 .about-content img {
-  width: 300px;       /* keep original size */
-  border-radius: 10px;
-  grid-column: 1;     /* always first column */
-  justify-self: center; /* keep photo centered in its column */
+  max-width: 80%;     /* scale image on mobile */
+    height: auto;
+    margin-bottom: 20px; /* keep photo centered in its column */
 }
 
 .about-text {
@@ -646,3 +645,8 @@ h1, h2, h3 {
   }
 }
 
+@media (max-width: 768px) {
+  .about {
+    opacity: 1 !important;
+  }
+}
