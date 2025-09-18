@@ -441,12 +441,16 @@ h1, h2, h3 {
   border-radius: 12px;
   padding: 15px 20px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  cursor: pointer; /* makes it clickable on mobile */
 }
 
-.info-box:hover {
+.info-box:hover,
+.info-box:focus,
+.info-box:active {
   transform: translateY(-5px);
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  background: rgba(255, 255, 255, 0.08); /* subtle feedback on tap */
 }
 
 .info-box p {
@@ -455,7 +459,9 @@ h1, h2, h3 {
   transition: color 0.3s ease, filter 0.3s ease;
 }
 
-.info-box:hover p {
+.info-box:hover p,
+.info-box:focus p,
+.info-box:active p {
   color: #222; /* darker text */
   filter: blur(0); /* remove blur */
 }
@@ -645,3 +651,4 @@ h1, h2, h3 {
     gap: 10px; /* optional: adjust spacing between menu items */
   }
 }
+
