@@ -105,3 +105,50 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
+// ----- Fullscreen image viewer with dimmed glass background -----
+document.querySelectorAll(".gallery img").forEach(img => {
+  img.addEventListener("click", () => {
+    // Create overlay
+    const overlay = document.createElement("div");
+    overlay.style.position = "fixed";
+    overlay.style.top = 0;
+    overlay.style.left = 0;
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.background = "rgba(0, 0, 0, 0.85)"; // dimmed black
+    overlay.style.backdropFilter = "blur(15px)";      // glass blur
+    overlay.style.webkitBackdropFilter = "blur(15px)"; // Safari
+    overlay.style.display = "flex";
+    overlay.style.alignItems = "center";
+    overlay.style.justifyContent = "center";
+    overlay.style.cursor = "zoom-out";
+    overlay.style.zIndex = 2000;
+
+    // Create full image
+    const fullImg = document.createElement("img");
+    fullImg.src = img.src;
+    fullImg.style.width = "auto";
+    fullImg.style.height = "auto";
+    fullImg.style.maxWidth = "95vw";  // 95% of viewport width
+    fullImg.style.maxHeight = "95vh"; // 95% of viewport height
+    fullImg.style.borderRadius = "10px";
+    fullImg.style.boxShadow = "0 0 30px rgba(0,0,0,0.5)";
+    fullImg.style.transition = "transform 0.3s ease";
+    fullImg.style.transform = "scale(0.8)";
+
+    // Animate pop-in
+    setTimeout(() => {
+      fullImg.style.transform = "scale(1)";
+    }, 10);
+
+    overlay.appendChild(fullImg);
+
+    // Close overlay on click
+    overlay.addEventListener("click", () => {
+      overlay.remove();
+    });
+
+    document.body.appendChild(overlay);
+  });
+});
