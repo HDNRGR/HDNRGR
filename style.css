@@ -236,6 +236,13 @@ button.btn {
   margin-bottom: 10px;
 }
 
+.experience li span {
+  display: inline-block;   /* or block if you want full width */
+  white-space: normal;     /* allows wrapping */
+  word-break: break-word;  /* break long words if needed */
+}
+
+
 /* Contact */
 .contact {
   padding: 80px 20px;
@@ -701,5 +708,6 @@ h1, h2, h3 {
     display: none; /* logo hidden on mobile */
   }
 }
+
 
 
