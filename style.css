@@ -181,7 +181,6 @@ button.btn {
   position: relative;    /* needed for z-index to work */
 }
 
-
 .about-text ul {
   margin-top: 10px;
   list-style: none;
@@ -189,6 +188,17 @@ button.btn {
 
 .about-text li {
   margin-bottom: 5px;
+}
+
+.about .info-box h3 {
+  font-family: 'Arial', sans-serif; /* or your default font */
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: rgb(109, 109, 109); /* accent */
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  text-shadow: none !important;
 }
 
 .scroll-offset {
@@ -234,6 +244,17 @@ button.btn {
 
 .experience li {
   margin-bottom: 10px;
+}
+
+.experience .info-box h3 {
+  font-family: 'Arial', sans-serif; /* or your default font */
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: rgb(109, 109, 109); /* accent */
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  text-shadow: none !important;
 }
 /* Contact */
 .contact {
@@ -700,6 +721,7 @@ h1, h2, h3 {
     display: none; /* logo hidden on mobile */
   }
 }
+
 
 
 
