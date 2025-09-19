@@ -153,3 +153,8 @@ document.querySelectorAll(".gallery img").forEach(img => {
   });
 });
 
+document.querySelectorAll('.info-box').forEach(box => {
+  box.addEventListener('click', () => {
+    box.classList.toggle('active');
+  });
+});
