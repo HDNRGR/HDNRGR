@@ -317,25 +317,25 @@ footer {
 /* Fade-in left */
 .fade-left {
   opacity: 0;
-  transform: translateX(-250px);
+
   transition: opacity 1.3s ease 0.1s, transform 1.3s ease 0.2s; /* added delay */
 }
 
 .fade-left.visible {
   opacity: 1;
-  transform: translateX(0);
+
 }
 
 /* Fade-in right */
 .fade-right {
   opacity: 0;
-  transform: translateX(250px);
+
   transition: opacity 1.3s ease 0.1s, transform 1.3s ease 0.2s; /* added delay */
 }
 
 .fade-right.visible {
   opacity: 1;
-  transform: translateX(0);
+
 }
 
 /* Fade-in up */
@@ -701,4 +701,5 @@ h1, h2, h3 {
     display: none; /* logo hidden on mobile */
   }
 }
+
 
